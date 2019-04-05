@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Alert, StyleSheet, View, TextInput, ImageBackground, ScrollView } from 'react-native';
 import search from './assets/search.png';
 import { ListItem } from 'react-native-elements';
-import API_DETAILS from 'constants.js';
+import { API_DETAILS } from './constants';
 
 class SearchCity extends Component {
   constructor(props) {
@@ -39,11 +39,11 @@ class SearchCity extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput 
+        <TextInput
           style={{height: 40, fontSize: 18, borderColor: '#d6d6d6', borderWidth: 1, borderRadius: 5, paddingLeft: 40, paddingRight: 40, paddingTop: 10, paddingBottom: 10, textAlign: 'left'}}
           placeholder='Search for a city'
           onChangeText={(text) => this.searchCities(text)}
-          value={this.state.text}>          
+          value={this.state.text}>
         </TextInput>
         <ImageBackground
          source={search} style={{width: 18, height: 18, position: 'absolute', top: 13, left: 12}}>
@@ -52,11 +52,11 @@ class SearchCity extends Component {
           { this.state.cities ?
               this.state.cities.map((city, index) => (
                 <ListItem
-                  key={index}                  
+                  key={index}
                   title={city.description}
                   titleStyle={{ color: '#08c' }}
                   containerStyle={{borderBottomWidth: 1, borderBottomColor: '#d6d6d6'}}
-                  onPress={this.alertBox}                  
+                  onPress={this.alertBox}
                 />
               ))
             :
