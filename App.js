@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Alert, AppRegistry, Platform, StyleSheet, View, TextInput, ImageBackground, Text, ScrollView, TouchableHighlight } from 'react-native';
 import search from './assets/search.png';
 import { ListItem } from 'react-native-elements';
+import API_DETAILS from 'constants.js';
 
 export default class Touchables extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class Touchables extends Component {
   }
 
   searchCities = async (text) => {
-    const mapsAPI = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${text}&types=(cities)&language=en_CA&key=AIzaSyCKbwA1v7MFLIskEqE5YryfNMGT6WA9BBU`;
+    const mapsAPI = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${text}&types=(cities)&language=en_CA&key=${API_DETAILS.api_key_google}`;
     if(text.length > 2) {
       try {
       let response = await fetch(mapsAPI);
