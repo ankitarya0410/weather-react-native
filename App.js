@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Alert, AppRegistry, Platform, StyleSheet, View, TextInput, ImageBackground, Text, ScrollView, TouchableHighlight } from 'react-native';
+import { Alert, StyleSheet, View, TextInput, ImageBackground, ScrollView } from 'react-native';
 import search from './assets/search.png';
 import { ListItem } from 'react-native-elements';
 import API_DETAILS from 'constants.js';
 
-export default class Touchables extends Component {
+class SearchCity extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -78,3 +78,5 @@ const styles = StyleSheet.create({
 
 // skip this line if using Create React Native App
 //AppRegistry.registerComponent('AwesomeProject', () => Touchables);
+
+export default SearchCity;
